@@ -10,6 +10,12 @@ export interface Post {
 		};
 }
 
+export type CreatePostInput = {
+	title: string;
+	content: string;
+	published: boolean;
+	userId: number;
+};
 
 // export interface User {
 // 	id: number;
@@ -30,12 +36,6 @@ export const getPostById = async (id: number): Promise<Post | undefined> => {
     return response.data.data;
 };
 
-export type CreatePostInput = {
-	title: string;
-	content: string;
-	published: boolean;
-	userId: number;
-};
 
 export const createPost = async (newPost: CreatePostInput): Promise<Post | undefined> => {
     const response = await api.post<{ message: string; data: Post }>("/posts", newPost);
@@ -49,15 +49,13 @@ export const updatePost = async (id: number, data: Omit<Post, 'id'>): Promise<Po
 };
 
 
-
-
 export const deletePost = async (id: number): Promise<boolean> => {
 
     await api.delete<{message: string;}>(`/posts/${id}`);
     return true;
 };
 
-// mockApi.ts
+
 export const loginUser = async (user: { email: string; password: string }) => {
 	const response = await api.post<{ message: string; data: { token: string; userId: number } }>('/auth/login', user);
 	const token = response.data.data.token;
