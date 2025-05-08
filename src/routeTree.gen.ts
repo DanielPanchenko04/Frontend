@@ -163,10 +163,8 @@ export interface FileRoutesById {
   '/posts/$id': typeof PostsIdRoute;
   '/posts/new': typeof PostsNewRoute;
   '/posts/': typeof PostsIndexRoute;
-
-  [key: string]: AnyRoute;  // Додаємо підтримку динамічних шляхів
+  [key: string]: AnyRoute;  
 }
-
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
