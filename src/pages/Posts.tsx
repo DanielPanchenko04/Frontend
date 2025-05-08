@@ -30,7 +30,7 @@ const Posts = () => {
 						<p><strong>ID:</strong> {post.id}</p>
 						<p><strong>Заголовок:</strong> {post.title}</p>
 						<div className="flex items-center gap-4">
-							<Link to={{ pathname: '/posts/${post.id}' }} className="text-blue-600 hover:underline">
+							<Link to={`/posts/${post.id}`} className="text-blue-600 hover:underline">
   								Переглянути деталі
 							</Link>
 							<button
