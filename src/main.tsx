@@ -6,7 +6,8 @@ import { routeTree } from "./routeTree.gen.ts";
 import "./styles/tailwind.css";
 import './common/i18n'
 
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree }) as RouterCore<AnyRoute, TrailingSlashOption, boolean, RouterHistory, Record<string, any>>; 
+
 
 declare module "@tanstack/react-router" {
 	interface Register {
