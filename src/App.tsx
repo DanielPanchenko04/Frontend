@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import { RouterProvider, type createRouter } from "@tanstack/react-router";
+import { RouterProvider } from "@tanstack/react-router";
 import type { FunctionComponent } from "./common/types";
 // import { TanStackRouterDevelopmentTools } from "./components/utils/development-tools/TanStackRouterDevelopmentTools";
 import { router } from './main';
