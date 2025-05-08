@@ -18,7 +18,6 @@ import { Route as IndexImport } from './routes/index'
 import { Route as PostsIndexImport } from './routes/posts/index'
 import { Route as PostsNewImport } from './routes/posts.new'
 import { Route as PostsIdImport } from './routes/posts/$id'
-import type { AnyRoute } from '@tanstack/react-router';
 
 // Create/Update Routes
 
@@ -98,21 +97,21 @@ declare module '@tanstack/react-router' {
     }
     '/posts/$id': {
       id: '/posts/$id'
-      path: '/posts/$id'
+      path: '/$id'
       fullPath: '/posts/$id'
       preLoaderRoute: typeof PostsIdImport
       parentRoute: typeof PostsImport
     }
     '/posts/new': {
       id: '/posts/new'
-      path: '/posts/new'
+      path: '/new'
       fullPath: '/posts/new'
       preLoaderRoute: typeof PostsNewImport
       parentRoute: typeof PostsImport
     }
     '/posts/': {
       id: '/posts/'
-      path: '/posts/'
+      path: '/'
       fullPath: '/posts/'
       preLoaderRoute: typeof PostsIndexImport
       parentRoute: typeof PostsImport
@@ -137,16 +136,14 @@ const PostsRouteChildren: PostsRouteChildren = {
 const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/home': typeof HomeRoute;
-  '/login': typeof LoginRoute;
-  '/posts': typeof PostsRouteWithChildren;
-  '/posts/$id': typeof PostsIdRoute;
-  '/posts/new': typeof PostsNewRoute;
-  '/posts/': typeof PostsIndexRoute;
-  [key: string]: AnyRoute;  
+  '/': typeof IndexRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/posts': typeof PostsRouteWithChildren
+  '/posts/$id': typeof PostsIdRoute
+  '/posts/new': typeof PostsNewRoute
+  '/posts/': typeof PostsIndexRoute
 }
-
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -158,15 +155,14 @@ export interface FileRoutesByTo {
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  '/': typeof IndexRoute;
-  '/home': typeof HomeRoute;
-  '/login': typeof LoginRoute;
-  '/posts': typeof PostsRouteWithChildren;
-  '/posts/$id': typeof PostsIdRoute;
-  '/posts/new': typeof PostsNewRoute;
-  '/posts/': typeof PostsIndexRoute;
-  [key: string]: AnyRoute;  
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/posts': typeof PostsRouteWithChildren
+  '/posts/$id': typeof PostsIdRoute
+  '/posts/new': typeof PostsNewRoute
+  '/posts/': typeof PostsIndexRoute
 }
 
 export interface FileRouteTypes {
