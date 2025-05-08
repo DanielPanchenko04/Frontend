@@ -30,7 +30,12 @@ const Posts = () => {
 						<p><strong>ID:</strong> {post.id}</p>
 						<p><strong>Заголовок:</strong> {post.title}</p>
 						<div className="flex items-center gap-4">
-							<Link to={`/posts/${post.id}`} className="text-blue-600 hover:underline">
+							<Link 
+  								to="/posts/$id" 
+  								params={{ id: String(post.id) }} 
+ 								className="text-blue-600 hover:underline"
+							>
+
   								Переглянути деталі
 							</Link>
 							<button
