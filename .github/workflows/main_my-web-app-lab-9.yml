@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_03b1047b59c14d3c8e86f532b8e3cc33 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}
+        tags: ${{ secrets.AzureAppService_ContainerUsername_03b1047b59c14d3c8e86f532b8e3cc33 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
