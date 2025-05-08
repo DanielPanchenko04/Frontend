@@ -135,15 +135,17 @@ const PostsRouteChildren: PostsRouteChildren = {
 
 const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
 
-interface FileRoutesByFullPath {
-    '/': typeof IndexRoute
-    '/home': typeof HomeRoute
-    '/login': typeof LoginRoute
-    '/posts': typeof PostsRouteWithChildren
-    '/posts/$id': typeof PostsIdRoute
-    '/posts/new': typeof PostsNewRoute
-    '/posts/': typeof PostsIndexRoute
-  }
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute;
+  '/home': typeof HomeRoute;
+  '/login': typeof LoginRoute;
+  '/posts': typeof PostsRouteWithChildren;
+  '/posts/$id': typeof PostsIdRoute;
+  '/posts/new': typeof PostsNewRoute;
+  '/posts/': typeof PostsIndexRoute;
+  [key: string]: AnyRoute;  
+}
+
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
