@@ -97,21 +97,21 @@ declare module '@tanstack/react-router' {
     }
     '/posts/$id': {
       id: '/posts/$id'
-      path: '/$id'
+      path: '/posts/$id'
       fullPath: '/posts/$id'
       preLoaderRoute: typeof PostsIdImport
       parentRoute: typeof PostsImport
     }
     '/posts/new': {
       id: '/posts/new'
-      path: '/new'
+      path: '/posts/new'
       fullPath: '/posts/new'
       preLoaderRoute: typeof PostsNewImport
       parentRoute: typeof PostsImport
     }
     '/posts/': {
       id: '/posts/'
-      path: '/'
+      path: '/posts/'
       fullPath: '/posts/'
       preLoaderRoute: typeof PostsIndexImport
       parentRoute: typeof PostsImport
@@ -135,15 +135,15 @@ const PostsRouteChildren: PostsRouteChildren = {
 
 const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
 
-export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/home': typeof HomeRoute
-  '/login': typeof LoginRoute
-  '/posts': typeof PostsRouteWithChildren
-  '/posts/$id': typeof PostsIdRoute
-  '/posts/new': typeof PostsNewRoute
-  '/posts/': typeof PostsIndexRoute
-}
+interface FileRoutesByFullPath {
+    '/': typeof IndexRoute
+    '/home': typeof HomeRoute
+    '/login': typeof LoginRoute
+    '/posts': typeof PostsRouteWithChildren
+    '/posts/$id': typeof PostsIdRoute
+    '/posts/new': typeof PostsNewRoute
+    '/posts/': typeof PostsIndexRoute
+  }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
