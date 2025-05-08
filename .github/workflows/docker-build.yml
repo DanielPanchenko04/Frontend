@@ -37,7 +37,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/danielpanchenko04/backend
+          tags: ghcr.io/danielpanchenko04/frontend:latest
 
   # deploy-to-azure:
   #   runs-on: ubuntu-latest
