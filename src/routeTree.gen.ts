@@ -18,6 +18,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as PostsIndexImport } from './routes/posts/index'
 import { Route as PostsNewImport } from './routes/posts.new'
 import { Route as PostsIdImport } from './routes/posts/$id'
+import type { AnyRoute } from '@tanstack/react-router';
 
 // Create/Update Routes
 
