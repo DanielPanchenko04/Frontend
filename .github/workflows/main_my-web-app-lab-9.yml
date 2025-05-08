@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_91ef81559dad4ba5a61e35ec14de1482 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_82e0622952b946fa828239a65fd239cd }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_03b1047b59c14d3c8e86f532b8e3cc33 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_3fb3aec43d2647d6a06e4982f67cf64b }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_91ef81559dad4ba5a61e35ec14de1482 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_03b1047b59c14d3c8e86f532b8e3cc33 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'my-web-app-lab-9'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_050f8990cd7a400e9f1aece1081734b3 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_91ef81559dad4ba5a61e35ec14de1482 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_7ad9afe45bad40c1a12a5539d64a67d3 }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_03b1047b59c14d3c8e86f532b8e3cc33 }}/ghcr.io/danielpanchenko04/backend:${{ github.sha }}'
