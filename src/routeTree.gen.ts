@@ -155,15 +155,18 @@ export interface FileRoutesByTo {
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/home': typeof HomeRoute
-  '/login': typeof LoginRoute
-  '/posts': typeof PostsRouteWithChildren
-  '/posts/$id': typeof PostsIdRoute
-  '/posts/new': typeof PostsNewRoute
-  '/posts/': typeof PostsIndexRoute
+  __root__: typeof rootRoute;
+  '/': typeof IndexRoute;
+  '/home': typeof HomeRoute;
+  '/login': typeof LoginRoute;
+  '/posts': typeof PostsRouteWithChildren;
+  '/posts/$id': typeof PostsIdRoute;
+  '/posts/new': typeof PostsNewRoute;
+  '/posts/': typeof PostsIndexRoute;
+
+  [key: string]: AnyRoute;  // Додаємо підтримку динамічних шляхів
 }
+
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
